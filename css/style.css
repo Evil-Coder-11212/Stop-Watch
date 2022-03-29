@@ -1,0 +1,107 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+:root {
+  --primary-color: rgb(255, 179, 56);
+  --secondary-color: rgb(26, 26, 26);
+  --box-shadow: rgb(255, 135, 135) 1px 1px 3px 0px inset,
+    rgba(48, 48, 48, 0.5) -1px -1px 3px 1px inset;
+  --font-family: Nunito, sans-serif;
+  --all-transition: transform ease-in-out 0.3s 0s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.main-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 600px;
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+}
+
+.timer-container {
+  width: 100%;
+  height: 60%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.timer-container > p {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: var(--all-transition);
+}
+
+.btn-container {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.btn-container > button {
+  width: 160px;
+  height: 35px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  color: white;
+  transition: var(--all-transition);
+}
+
+/* NTH CHILD */
+.btn-container > button:nth-child(2) {
+  background-color: rgb(0, 156, 0);
+}
+
+.btn-container > button:nth-child(1),
+.btn-container > button:nth-child(3) {
+  background-color: red;
+}
+
+/* Animations */
+.btn-container > button:hover {
+  transform: scale(1.08);
+}
+
+.btn-container > button:nth-child(1):active,
+.btn-container > button:nth-child(3):active {
+  background-color: rgba(255, 0, 0, 0.781);
+}
+
+.btn-container > button:nth-child(2):active {
+  background-color: rgba(0, 156, 0, 0.781);
+}
+
+.timer-container > p:hover {
+  transform: scale(1.1);
+}

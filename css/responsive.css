@@ -1,0 +1,19 @@
+@media screen and (max-width: 640px) {
+  .container {
+    width: 95%;
+    height: 500px;
+  }
+
+  .timer-container {
+    height: 40%;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .btn-container > button {
+    margin: 10px 0;
+    width: 95%;
+  }
+}
