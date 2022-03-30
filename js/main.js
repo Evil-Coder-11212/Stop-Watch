@@ -1,36 +1,61 @@
+// Initializing Variables
 const timerEl = document.getElementById("timer-text");
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-let days = 0;
+const startBtn = document.querySelectorAll(".buttons");
+let seconds = (minutes = hours = days = 0);
+let pauseTimer = false;
 
-const logic = () => {
+// Start button logic
+const start = () => {
   let timer = "";
-  let error = false;
-  let erorMessage = "";
   // Seconds and minutes here
-  if (seconds <= 60) {
-    seconds += 1;
-  } else if (seconds >= 60) {
-    seconds = 0;
-    minutes += 1;
-  }
-  // Hours
-  if (minutes >= 60) {
-    minutes = 0;
-    hours += 1;
-  } else if (hours >= 24) {
-    hours = 0;
-    days += 1;
+  if (!pauseTimer) {
+    if (seconds <= 60) {
+      seconds += 1;
+    } else if (seconds >= 60) {
+      seconds = 0;
+      minutes += 1;
+    }
+    // Hours
+    if (minutes >= 60) {
+      minutes = 0;
+      hours += 1;
+    } else if (hours >= 24) {
+      hours = 0;
+      days += 1;
+    }
   }
   timer = `${days}:${hours}:${minutes}:${seconds}`;
   timerEl.textContent = timer;
 };
 
-// Calling Function
-setInterval(logic, 1000);
+// Pause button logic
+const pause = () => {
+  pauseTimer = true;
+};
 
-// Problems :
-// Start Button: TO DO
-// Pause Butoton: TO DO
-// Reseat Button: TO DO
+// Reseat button logic
+const reseat = () => {
+  seconds = 0;
+  hours = 0;
+  minutes = 0;
+  days = 0;
+  timer = `${days}:${hours}:${minutes}:${seconds}`;
+  timerEl.textContent = timer;
+};
+
+// Calling Function
+startBtn[0].addEventListener("click", () => {
+  pause();
+});
+
+startBtn[1].addEventListener("click", () => {
+  pauseTimer = false;
+  timerInterval = setInterval(start, 10);
+});
+
+startBtn[2].addEventListener("click", () => {
+  reseat();
+});
+
+// Problem
+// Putting the value in local system
