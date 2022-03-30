@@ -1,4 +1,4 @@
-# [Stop Wtach](https://evil-coder-11212.github.io/Stop-Watch/)
+# Stop Wtach
 Stop watch is an web appilcation build with pure HTML, CSS, JS
 
 ## About Me
